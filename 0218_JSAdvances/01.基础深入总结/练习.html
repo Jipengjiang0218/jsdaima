@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        #box {
+            width: 200px;
+            height: 200px;
+            background: deeppink;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+</body>
+<script type="text/javascript">
+   function demo() {
+
+   }
+    demo.haha = 'kebe'
+   console.log(demo.haha)
+
+   var obj = {
+       fn3:function () {
+           console.log('我是fn3',this)
+           this.m = 3
+       }
+   }
+    var fn3 = obj.fn3
+
+    var a = new fn3()
+    console.log(a.m)
+   obj.fn3()
+   console.log(obj.m)
+//
+
+
+    function sum(a,b) {
+        var c = a + b
+        console.log(this)
+        console.log(c)
+    }
+    var obj1 = {me:0}
+    sum.call(obj1,1,2)
+    sum.apply(obj1,[4,6])
+</script>
+</html>
